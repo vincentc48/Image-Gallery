@@ -1,0 +1,566 @@
+body {
+  margin: 0;
+  width: 100%;
+  font-family: 'Spinnaker', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root{
+  overflow: hidden;
+}
+
+nav{
+  margin:0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  position: relative;
+}
+
+h1{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.nav-brand{
+  margin: 30px 50px;
+}
+
+.nav-buttons{
+  grid-column: 3/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: auto;
+  transition: all 0.5s;
+  z-index: 1000;
+}
+
+.nav-link{
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  margin: auto 1.5vw;
+}
+
+#account-button{
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #0C3F8B;
+  background: #0C3F8B;
+  color: white;
+  transition: all 0.3s;
+}
+
+#account-button:hover{
+  color: #0C3f8B;
+  background: white;
+}
+
+.jumbotron{
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.jumbotron > div{
+  margin: 15vh 20% 0 20%;
+}
+
+.jumbotron > div > h2{
+  font-size: 36px;
+}
+
+.jumbotron > div >p{
+  margin-left: 5%;
+  font-size: 20px;
+}
+
+.jumbotron > div > a{
+  margin-left: 5%;
+  display: block;
+  width: 150px;
+  padding: 10px;
+  background-color: #0C3F8B;
+  color: white;
+  border: 2px solid #0C3F8B;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.jumbotron > div > a:hover{
+  background-color: white;
+  color: #0C3F8B;
+}
+
+svg.svg{
+  width: 40vw;
+  height: 40vh;
+  padding: 15vh 0vw 0vh 0vw;
+  transform: scaleX(-1)
+}
+
+button.dropdown{
+  color: black;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes wave1{
+  0% {transform: translateX(0vw);}
+  25%{transform: translateX(-7vw);}
+  50%{transform: translateX(0vw);}
+  75%{transform: translateX(7vw);}
+  100%{transform: translateX(0vw);}
+}
+
+@keyframes wave2{
+  0%{ transform: translateX(-100vw);}
+  100%{transform: translateX(0vw);}
+}
+
+section.waves{
+  position: relative;
+  width: 100vw;
+  height: 150vh; 
+  overflow: hidden;
+}
+
+div.title-under-wave{
+  position: absolute;
+  top: 20vh;
+  background-color: #3cffff;
+  z-index: 2;
+  width: 100%;
+  height: 150vh
+}
+
+div.title-under-wave h2{
+  margin: 10vh 5vw 0 5vw;
+  font-size: 72px;
+}
+
+div.title-under-wave p{
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 24px;
+  padding: 2vh 7vw;
+}
+
+svg.wave{
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+}
+
+svg#wave1{
+  width: 120vw;
+  top:0;
+  left: -10vw;
+  animation: wave1 15s ease-in-out infinite
+}
+
+svg#wave2{
+  width: 120vw;
+  top:0;
+  left: -10vw;
+  opacity: 0.3;
+  animation: wave1 10s alternate-reverse infinite
+}
+
+svg#wave3{
+  width: 120vw;
+  top:0;
+  left: -10vw;
+  opacity: 0.2;
+  animation: wave1 13s alternate infinite;
+  animation-delay: 0.3s;
+}
+
+.gallery{
+  display: grid;
+  background-color: transparent;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.username{
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+div.gradient{
+  width: 100%;
+  height: 30vh;
+  position: absolute;
+  top: 80vh;
+  left:0;
+  background-image: linear-gradient(#3cffff, white);
+}
+
+div.image{
+  position: relative;
+  margin: 2vh auto;
+  width: 80%;
+  height: 40vh;
+}
+
+
+div.image img{
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+div.image:hover img{
+  transform: scale(1.05);
+  box-shadow: 3px 3px 5px black;
+  opacity: 0.6;
+}
+
+button.add-remove-image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+  opacity: 0;
+  transition: all 0.5s;
+  font-size: 20px;
+  padding: 7px;
+  border-radius: none;
+  border-radius: 2px;
+  border: 2px solid #0C3F8B;
+  font-weight: 100;
+  color: white;
+  background-color: #0C3F8B;
+  transition: all 0.5s;
+  box-shadow: 3px 3px 5px black;
+}
+
+button.add-remove-image:hover{
+    background-color: white;
+    color: #0C3F8B
+}
+
+div.image:hover button.add-remove-image{
+  display: block;
+  opacity: 1;
+}
+
+h3{
+  position: absolute;
+  font-size:20px;
+  font-weight: 100;
+  top: -30px;
+  left: -10px;
+  padding: 7px;
+  box-shadow: 3px 3px 3px black;
+  background-color: #0C3F8B;
+  color: white;
+  border-radius: 2px;
+}
+
+div.fa-check-circle{
+  position: absolute;
+  font-size: 50px;
+  text-shadow: 3px 3px 5px black;
+  top: -10px;
+  right: -10px;
+  color: #39ff14;
+}
+
+div.mygallery h2{
+  width: 100%;
+  font-size: 5vw;
+  text-align: center
+}
+
+div.nopictures{
+  margin-top: 20vh;
+  width: 100%;
+  height: auto;
+}
+
+div.nopictures .no-pictures-text{
+  text-align: center;
+  font-size: 36px;
+  height: auto;
+}
+
+div.nopictures a{
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin: 3vh auto;
+  padding: 15px;
+  background-color: #3cffff;
+  border-radius: 3px;
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+div.nopictures a:hover{
+  background-color: black;
+  color: white;
+}
+
+button.logout-button{
+  display: block;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 700;
+  color: white;
+  padding: 10px;
+  margin: 2vh 1.5vw;
+  margin-left: auto;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+button.logout-button:hover{
+  background-color: white;
+  color: red;
+}
+
+
+svg.svg-login{
+  margin: 0vh 5vw;
+  padding: 0;
+  width: 30vw;
+  height: 30vw;
+}
+
+div.login{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div.login h2{
+  font-size: 36px;
+}
+
+form.login-form, form.register-form{
+  margin: 50px 20px;
+}
+
+.login-box{
+  display: block;
+  margin: 3vh 0;
+  background-color: white;
+  font-size: 20px;
+  border: none;
+  width: 70%;
+  box-shadow: 3px 3px 2px black;
+}
+
+.login-box:focus{
+  outline: none;
+  font-size: 22px;
+}
+
+.login-button{
+  border: none;
+  background-color: #3cffff;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s
+}
+
+.login-button:hover{
+  background-color: black;
+  color: white;
+}
+
+footer{
+  margin-top: 10vh;
+  width: 100%;
+  height: 20vh;
+  background-color: #3cffff;
+  color: black;
+  padding:  5vw;
+  box-sizing: border-box;
+  display: flex;
+}
+
+footer div{
+  width: 40%;
+  text-align:center;
+  margin-left: auto;
+  padding: 5px;
+}
+
+.positionedAbsolute{
+  position: absolute;
+}
+
+
+@media(max-width: 575px){
+  nav{
+    display: block;
+  }
+
+  h1{
+    display:inline;
+  }
+
+  .nav-brand{
+    margin: 30px 15px;
+  }
+
+  .positionedAbsolute{
+    position: absolute !important;
+  }
+
+  .nav-container{
+    transition: all 0.5s;
+  }
+
+  .nav-buttons{
+    top: -30px;
+    grid-template-columns: 1fr;
+    width:100vw;
+    height: 40vh;
+    text-align: center;
+    background: lightblue;
+    right: 0px;
+  }
+
+  .nav-buttons::before{
+    content: "Navigation";
+    box-sizing: border-box !important;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+    top: 0;
+    font-size: 30px;
+  }
+
+  .nav-buttons.hidden{
+    right: -110%;
+  }
+
+  .nav-link{
+    margin: auto;
+  }
+
+  button.dropdown, button.nav-crossout{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+  }
+
+  button.nav-crossout{
+    top: 10px;
+  }
+
+  #account-button{
+    margin-bottom: 40px;
+  }
+
+  svg.svg{
+    width: 90%;
+  }
+
+  div.title-under-wave{
+    top: 10vh;
+    height: 50vh
+  }
+
+  section.waves{
+    height: 100vh;
+  }
+
+  .gallery{
+    grid-template-columns: 1fr;
+  }
+
+  div.title-under-wave p{
+    font-size: 18px;
+  }
+  div.login{
+    grid-template-columns: 1fr;
+  }
+
+  div.gradient{
+    top: 60vh;
+  }
+
+  .jumbotron{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px){
+  .gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  
+  div.title-under-wave{
+    top: 20vh;
+    height: 50vh;
+  }
+
+  section.waves{
+    height: 100vh;
+  }
+
+  div.gradient{
+    top: 70vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px){
+  .gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div.title-under-wave{
+    top: 20vh;
+    height: 50vh;
+  }
+
+  section.waves{
+    height: 100vh;
+  }
+
+  div.gradient{
+    top: 70vh;
+  }
+}
+
+@media (min-width: 1200px){
+  div.title-under-wave{
+    top: 30vh;
+    height: 50vh
+  }
+
+  section.waves{
+    height: 120vh;
+  }
+
+  div.gradient{
+    top: 80vh;
+  }
+}
